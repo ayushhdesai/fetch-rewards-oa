@@ -1,0 +1,10 @@
+{
+    "retailer": "QuickShop",
+    "purchaseDate": "2022-02-08",
+    "purchaseTime": "13:00",
+    "total": "4.00",
+    "items": [
+        {"shortDescription": "Bread", "price": "2.00"},
+        {"shortDescription": "Milk", "price": "2.00"}
+    ]
+}

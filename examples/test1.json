@@ -1,0 +1,10 @@
+{
+    "retailer": "SuperMart",
+    "purchaseDate": "2022-01-03",
+    "purchaseTime": "14:30",
+    "total": "10.00",
+    "items": [
+        {"shortDescription": "Apple", "price": "4.50"},
+        {"shortDescription": "Banana", "price": "5.50"}
+    ]
+}
