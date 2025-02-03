@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException 
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse 
 from .models import Receipt, ReceiptResponse, PointsResponse
 from .database import save_receipt, get_receipt
 from .utils import calculate_points
@@ -18,3 +19,12 @@ def getting_points  (id: str):
     
     points = calculate_points(r)
     return PointsResponse(points = points)
+
+@app.exception_handler(HTTPException)
+async def validation_handler(request, exc):
+    if exc.status_code == 400:
+        return JSONResponse(
+            status_code = exc.status_code,
+            content = {"detail": "Bad Request"},
+        )
+    return await request.app.validation_handler(request, exc)
