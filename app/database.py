@@ -1,3 +1,5 @@
+# The in memory database for storing the receipts for each session.
+
 from typing import Dict
 from uuid import uuid4
 from .models import Receipt

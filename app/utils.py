@@ -1,3 +1,5 @@
+# Utility function for calculating points as per the defined rules.
+
 import math
 from .models import Receipt
 from typing import List

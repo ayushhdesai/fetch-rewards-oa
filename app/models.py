@@ -1,3 +1,5 @@
+# Model definition for the Item, Receipt and the related strctures.
+
 from pydantic import BaseModel
 from typing import List
 

@@ -1,3 +1,5 @@
+# Entry point for the API calls.
+
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse 
 from .models import Receipt, ReceiptResponse, PointsResponse
