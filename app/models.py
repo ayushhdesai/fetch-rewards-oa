@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 
 class Item(BaseModel):
-    shortDesc : str
+    shortDescription : str
     price : str
 
 class Receipt(BaseModel):
