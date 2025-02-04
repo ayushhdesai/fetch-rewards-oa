@@ -14,6 +14,10 @@ def test_receipt_processing():
         r2 = json.load(f)
     with open("examples/test3.json") as f:
         r3 = json.load(f)
+    with open("examples/test4.json") as f:
+        r4 = json.load(f)
+    with open("examples/test5.json") as f:
+        r5 = json.load(f)
 
     response = requests.post("http://127.0.0.1:8000/receipts/process", json=receipt1)
     assert response.status_code == 200
@@ -64,6 +68,26 @@ def test_receipt_processing():
     assert response.status_code == 200
     points5 = response.json()["points"]
     print(f"Points for receipt5: {points5}")
+
+    response = requests.post("http://127.0.0.1:8000/receipts/process", json=r4)
+    assert response.status_code == 200
+    receipt6_id = response.json()["id"]
+    print(f"Uploaded receipt6 with id: {receipt6_id}")
+
+    response = requests.get(f"http://127.0.0.1:8000/receipts/{receipt6_id}/points")
+    assert response.status_code == 200
+    points6 = response.json()["points"]
+    print(f"Points for receipt6: {points6}")
+
+    response = requests.post("http://127.0.0.1:8000/receipts/process", json=r5)
+    assert response.status_code == 200
+    receipt7_id = response.json()["id"]
+    print(f"Uploaded receipt7 with id: {receipt7_id}")
+
+    response = requests.get(f"http://127.0.0.1:8000/receipts/{receipt7_id}/points")
+    assert response.status_code == 200
+    points7 = response.json()["points"]
+    print(f"Points for receipt7: {points7}")
 
 if __name__ == "__main__":
     test_receipt_processing()
