@@ -36,8 +36,8 @@ def calculate_points(r: Receipt) -> int:
         points += 6
 
     # 8. 10 points if the time of purchase is after 2:00pm and before 4:00pm.
-    purchase_time = int(r.purchaseTime.split(":")[0])
-    if purchase_time > 14 and purchase_time < 16:
+    purchase_hour, purchase_minute = map(int, r.purchaseTime.split(":"))
+    if (purchase_hour == 14 and purchase_minute >= 1) or (purchase_hour== 15 and purchase_minute <= 59):
         points += 10
 
     return points
