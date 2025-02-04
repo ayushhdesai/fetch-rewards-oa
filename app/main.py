@@ -30,3 +30,7 @@ async def validation_handler(request, exc):
             content = {"detail": "Bad Request"},
         )
     return await request.app.validation_handler(request, exc)
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Fetch Rewards API"}
