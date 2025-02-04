@@ -28,7 +28,13 @@ A FastAPI-based web service for processing receipts and calculating reward point
     docker run -d -p 8000:8000 fastapi-receipt-processor
     ```
 
-#### The server is live Now - 
+4. **Check the running Docker container**  
+    ```bash
+    docker ps
+    ```
+    - Make sure port is not already allocated.
+
+#### The server is now live and ready to be tested - 
 - Open: `http://127.0.0.1:8000/`
 
 ### Option 2: Run Locally (Using Python)
@@ -40,7 +46,7 @@ A FastAPI-based web service for processing receipts and calculating reward point
     ```bash
     cd fetch-rewards-oa
     ```
-    
+
 2. **Install dependencies**  
     ```bash
     pip install -r requirements.txt
@@ -51,7 +57,7 @@ A FastAPI-based web service for processing receipts and calculating reward point
     uvicorn app.main:app --host 0.0.0.0 --port 8000
     ```
 
-#### The server is live Now - 
+#### The server is now live - 
 - Open: `http://127.0.0.1:8000/`
 
 4. **Testing the manually written test cases**  
