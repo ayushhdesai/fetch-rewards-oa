@@ -12,6 +12,9 @@ A FastAPI-based web service for processing receipts and calculating reward point
 1. **Clone the repository**  
     ```bash
     git clone https://github.com/ayushhdesai/fetch-rewards-oa.git
+    ```
+
+    ```bash
     cd fetch-rewards-oa
     ```
 
@@ -32,9 +35,12 @@ A FastAPI-based web service for processing receipts and calculating reward point
 1. **Clone the repository**  
     ```bash
     git clone https://github.com/ayushhdesai/fetch-rewards-oa.git
-    cd fetch-rewards-oa
     ```
 
+    ```bash
+    cd fetch-rewards-oa
+    ```
+    
 2. **Install dependencies**  
     ```bash
     pip install -r requirements.txt
@@ -50,5 +56,5 @@ A FastAPI-based web service for processing receipts and calculating reward point
 
 4. **Testing the manually written test cases**  
     ```bash
-    uvicorn app.main:app --host 0.0.0.0 --port 8000
+    python test_receipt_processor.py
     ```
