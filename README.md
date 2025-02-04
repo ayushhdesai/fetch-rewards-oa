@@ -60,7 +60,7 @@ A FastAPI-based web service for processing receipts and calculating reward point
 #### The server is now live - 
 - Open: `http://127.0.0.1:8000/`
 
-4. **Testing the manually written test cases**  
+4. **Testing the manually written test cases on a new terminal**  
     ```bash
     python test_receipt_processor.py
     ```
