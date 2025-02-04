@@ -3,7 +3,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse 
 from .models import Receipt, ReceiptResponse, PointsResponse
-from .database import save_receipt, get_receipt
+from .database import save_receipt, get_receipt, receipt_db
 from .utils import calculate_points
 
 app = FastAPI()
@@ -33,4 +33,19 @@ async def validation_handler(request, exc):
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to Fetch Rewards API"}
+    if not receipt_db:
+        return {"message": "No receipts have been processed yet."}
+    
+    all_receipts = []
+    for r_id, receipt in receipt_db.items():
+        points = calculate_points(receipt)
+        all_receipts.append({
+            "id": r_id,
+            "retailer": receipt.retailer,
+            "total": receipt.total,
+            "purchaseDate": receipt.purchaseDate,
+            "purchaseTime": receipt.purchaseTime,
+            "points": points
+        })
+    
+    return {"message": "Welcome to Fetch Rewards API", "receipts": all_receipts}
