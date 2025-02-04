@@ -25,7 +25,10 @@ A FastAPI-based web service for processing receipts and calculating reward point
     docker run -d -p 8000:8000 fastapi-receipt-processor
     ```
 
-### Option 2: Run Locally
+#### The server is live Now - 
+- Open: `http://127.0.0.1:8000/`
+
+### Option 2: Run Locally (Using Python)
 1. **Clone the repository**  
     ```bash
     git clone https://github.com/ayushhdesai/fetch-rewards-oa.git
@@ -42,19 +45,10 @@ A FastAPI-based web service for processing receipts and calculating reward point
     uvicorn app.main:app --host 0.0.0.0 --port 8000
     ```
 
-### Using Swagger UI
-- Open: `http://127.0.0.1:8000/docs`
-```bash
-curl -X 'POST' \
-  'http://127.0.0.1:8000/receipts/process' \
-  -H 'Content-Type: application/json' \
-  -d '{
-        "retailer": "StoreX",
-        "purchaseDate": "2024-02-01",
-        "purchaseTime": "15:30",
-        "total": "12.50",
-        "items": [
-            {"shortDescription": "ItemA", "price": "6.25"},
-            {"shortDescription": "ItemB", "price": "6.25"}
-        ]
-      }'
+#### The server is live Now - 
+- Open: `http://127.0.0.1:8000/`
+
+4. **Testing the manually written test cases**  
+    ```bash
+    uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ```
